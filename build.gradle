@@ -28,4 +28,8 @@ dependencies {
     testRuntimeOnly('io.qameta.allure:allure-junit5:2.6.0')
 }
 
+test {
+    useJUnitPlatform()
+}
+
 wrapper.gradleVersion = '4.9'
