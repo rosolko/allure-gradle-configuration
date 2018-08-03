@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.5'
+}
+
+group 'com.github.rosolko'
+version '1.0.0'
+
+sourceCompatibility = 1.8
+
+allure {
+    autoconfigure = false
+    version = '2.7.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation('com.squareup.retrofit2:retrofit:2.4.0')
+    implementation('com.squareup.retrofit2:converter-gson:2.4.0')
+    implementation('io.qameta.allure:allure-okhttp3:2.6.0')
+    testImplementation('org.junit.jupiter:junit-jupiter-api:5.2.0')
+    testImplementation('com.codeborne:selenide:4.12.3')
+    testImplementation('io.qameta.allure:allure-selenide:2.7.0')
+    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.2.0')
+    testRuntimeOnly('io.qameta.allure:allure-junit5:2.6.0')
+}
+
+wrapper.gradleVersion = '4.9'
