@@ -15,6 +15,7 @@ import org.junit.jupiter.api.TestInstance;
 class SelenideTests {
     @BeforeAll
     void setUp() {
+        Configuration.headless = true;
         SelenideLogger.addListener("allure", new AllureSelenide().savePageSource(false));
     }
 
