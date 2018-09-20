@@ -32,4 +32,4 @@ test {
     useJUnitPlatform()
 }
 
-wrapper.gradleVersion = '4.9'
+wrapper.gradleVersion = '4.10.2'
