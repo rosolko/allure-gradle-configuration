@@ -5,6 +5,7 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 
@@ -13,6 +14,7 @@ import org.junit.jupiter.api.TestInstance;
  * @since 1.0.0
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@DisplayName("Selenide tests")
 class SelenideTests {
     @BeforeAll
     void setUp() {
@@ -26,6 +28,7 @@ class SelenideTests {
     }
 
     @Test
+    @DisplayName("Able to open web application")
     void openTest() {
         Selenide.open("https://www.google.com");
         Assertions.assertEquals(Selenide.title(), "Google");

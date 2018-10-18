@@ -5,6 +5,7 @@ import io.qameta.allure.okhttp3.AllureOkHttp3;
 import okhttp3.OkHttpClient;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
 import retrofit2.Call;
@@ -16,6 +17,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @since 1.0.0
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
+@DisplayName("Retrofit tests")
 class RetrofitTests {
     private GitHubService service;
 
@@ -34,6 +36,7 @@ class RetrofitTests {
     }
 
     @Test
+    @DisplayName("Able to get github repository list by name")
     void gitHubRepoTest() throws IOException {
         final Call<List<Repo>> reposCall = service.listRepos("octocat");
         final List<Repo> repos = reposCall.execute().body();
