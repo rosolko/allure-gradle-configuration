@@ -4,7 +4,7 @@ jdk:
   - oraclejdk8
 
 addons:
-  firefox: latest
+  chrome: stable
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
@@ -17,4 +17,4 @@ cache:
 
 script:
   - ./gradlew test
-  
+
