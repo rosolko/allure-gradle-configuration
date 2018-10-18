@@ -38,7 +38,7 @@ class RetrofitTests {
     @Test
     @DisplayName("Able to get github repository list by name")
     void gitHubRepoTest() throws IOException {
-        final Call<List<Repo>> reposCall = service.listRepos("octocat");
+        final Call<List<Repo>> reposCall = service.listRepos("github");
         final List<Repo> repos = reposCall.execute().body();
         Assertions.assertNotNull(repos);
     }

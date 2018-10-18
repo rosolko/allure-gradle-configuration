@@ -26,10 +26,13 @@ dependencies {
     testImplementation('io.qameta.allure:allure-selenide:2.7.0')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.3.1')
     testRuntimeOnly('io.qameta.allure:allure-junit5:2.7.0')
+    testRuntimeOnly('org.slf4j:slf4j-simple:1.7.25')
 }
 
 test {
     useJUnitPlatform()
+    testLogging.showStandardStreams = true
+    maxParallelForks = (int) (Runtime.runtime.availableProcessors().intdiv(2) ?: 1)
 }
 
 wrapper.gradleVersion = '4.10.2'
