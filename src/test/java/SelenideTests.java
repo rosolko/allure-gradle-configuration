@@ -1,5 +1,5 @@
-import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.SelenideConfig;
+import com.codeborne.selenide.SelenideDriver;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterAll;
@@ -16,9 +16,11 @@ import org.junit.jupiter.api.TestInstance;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 @DisplayName("Selenide tests")
 class SelenideTests {
+    private SelenideDriver driver;
+
     @BeforeAll
     void setUp() {
-        Configuration.headless = true;
+        driver = new SelenideDriver(new SelenideConfig().headless(true));
         SelenideLogger.addListener("allure", new AllureSelenide().savePageSource(false));
     }
 
@@ -30,7 +32,7 @@ class SelenideTests {
     @Test
     @DisplayName("Able to open web application")
     void openTest() {
-        Selenide.open("https://www.google.com");
-        Assertions.assertEquals(Selenide.title(), "Google");
+        driver.open("https://www.google.com");
+        Assertions.assertEquals(driver.title(), "Google");
     }
 }
