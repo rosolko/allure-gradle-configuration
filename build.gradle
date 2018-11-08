@@ -22,7 +22,7 @@ dependencies {
     implementation('com.squareup.retrofit2:converter-gson:2.4.0')
     implementation('io.qameta.allure:allure-okhttp3:2.7.0')
     testImplementation('org.junit.jupiter:junit-jupiter-api:5.3.1')
-    testImplementation('com.codeborne:selenide:5.0.0')
+    testImplementation('com.codeborne:selenide:5.0.1')
     testImplementation('io.qameta.allure:allure-selenide:2.7.0')
     testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.3.1')
     testRuntimeOnly('io.qameta.allure:allure-junit5:2.7.0')
