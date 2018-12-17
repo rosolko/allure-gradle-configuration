@@ -35,4 +35,4 @@ test {
     maxParallelForks = (int) (Runtime.runtime.availableProcessors().intdiv(2) ?: 1)
 }
 
-wrapper.gradleVersion = '4.10.2'
+wrapper.gradleVersion = '5.0'
