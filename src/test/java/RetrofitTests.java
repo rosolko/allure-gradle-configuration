@@ -3,12 +3,12 @@ import java.io.IOException;
 import io.qameta.allure.okhttp3.AllureOkHttp3;
 import io.undertow.Undertow;
 import io.undertow.server.RoutingHandler;
+import io.undertow.util.Headers;
 import io.undertow.util.Methods;
 import okhttp3.OkHttpClient;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;
@@ -27,22 +27,25 @@ class RetrofitTests {
     private Undertow server;
 
     @BeforeAll
-    void setUpServer() {
+    void setUpApiServer() {
         server = Undertow.builder()
                 .addHttpListener(8080, "127.0.0.1")
                 .setHandler(new RoutingHandler()
                         .add(Methods.GET, "/owner",
-                                exchange -> exchange.getResponseSender().send("{\"name\":\"example\"}")))
+                                exchange -> {
+                                    exchange.getResponseHeaders().put(Headers.CONTENT_TYPE, "application/json");
+                                    exchange.getResponseSender().send("{\"name\":\"example\"}");
+                                }))
                 .build();
         server.start();
     }
 
     @AfterAll
-    void tearDownServer() {
+    void tearDownApiServer() {
         server.stop();
     }
 
-    @BeforeEach
+    @BeforeAll
     void setUpApiClient() {
         final AllureOkHttp3 allureOkHttp3 = new AllureOkHttp3();
         final OkHttpClient okHttpClient = new OkHttpClient.Builder()
@@ -62,6 +65,6 @@ class RetrofitTests {
         final Call<User> ownerCall = service.owner();
         final User owner = ownerCall.execute().body();
         Assertions.assertNotNull(owner);
-        Assertions.assertEquals(owner.name, "example");
+        Assertions.assertEquals("example", owner.name);
     }
 }
