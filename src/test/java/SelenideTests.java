@@ -26,7 +26,7 @@ class SelenideTests {
     @BeforeAll
     void setUpWebServer() {
         server = Undertow.builder()
-                .addHttpListener(8080, "127.0.0.1")
+                .addHttpListener(8081, "127.0.0.1")
                 .setHandler(new RoutingHandler()
                         .add(Methods.GET, "/",
                                 exchange -> {
@@ -45,7 +45,7 @@ class SelenideTests {
 
     @BeforeAll
     void setUpSelenide() {
-        driver = new SelenideDriver(new SelenideConfig().headless(false));
+        driver = new SelenideDriver(new SelenideConfig().headless(true));
         SelenideLogger.addListener("allure", new AllureSelenide().savePageSource(false));
     }
 
@@ -57,7 +57,7 @@ class SelenideTests {
     @Test
     @DisplayName("Able to open web application")
     void openTest() {
-        driver.open("http://127.0.0.1:8080/");
+        driver.open("http://127.0.0.1:8081/");
         Assertions.assertEquals("example", driver.title());
     }
 }
