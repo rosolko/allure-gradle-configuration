@@ -4,7 +4,7 @@ Related to [medium post](https://medium.com/@rosolko/simple-allure-2-configurati
 
 How to use:
 * Clone repo
-* Run tests: `./gradlew test`
+* Run tests: `./gradlew clean test`
 * Generate allure project:
     * `./gradlew allureReport` - generate Allure report
     * `./gradlew allureServe` - generate Allure report and opens it in the default browser
