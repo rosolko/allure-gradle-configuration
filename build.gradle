@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    implementation("com.squareup.retrofit2:converter-gson:2.8.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.8.1")
     implementation("io.qameta.allure:allure-okhttp3:2.13.2")
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.1")
     testImplementation("com.codeborne:selenide:5.10.0")
