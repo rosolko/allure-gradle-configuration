@@ -23,7 +23,7 @@ dependencies {
     implementation("io.qameta.allure:allure-okhttp3:2.13.7")
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.0")
     testImplementation("com.codeborne:selenide:5.16.1")
-    testImplementation("io.qameta.allure:allure-selenide:2.13.6")
+    testImplementation("io.qameta.allure:allure-selenide:2.13.7")
     testImplementation("io.undertow:undertow-core:2.2.2.Final")
     testRuntimeOnly("io.qameta.allure:allure-junit5:2.13.7")
     testRuntimeOnly("org.slf4j:slf4j-simple:1.7.30")
