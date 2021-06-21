@@ -30,7 +30,7 @@ dependencies {
     testImplementation("io.qameta.allure:allure-selenide:2.14.0")
     testImplementation("io.undertow:undertow-core:2.2.8.Final")
     testRuntimeOnly("io.qameta.allure:allure-junit5:2.14.0")
-    testRuntimeOnly("org.slf4j:slf4j-simple:1.7.30")
+    testRuntimeOnly("org.slf4j:slf4j-simple:1.7.31")
 }
 
 tasks.withType(Test) {
