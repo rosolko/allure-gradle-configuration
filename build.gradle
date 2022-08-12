@@ -28,7 +28,7 @@ dependencies {
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.0")
     testImplementation("io.qameta.allure:allure-selenide:2.18.1")
     testImplementation("io.undertow:undertow-core:2.2.18.Final")
-    testRuntimeOnly("io.qameta.allure:allure-junit5:2.18.1")
+    testRuntimeOnly("io.qameta.allure:allure-junit5:2.19.0")
     testRuntimeOnly("org.slf4j:slf4j-simple:1.7.36")
 }
 
