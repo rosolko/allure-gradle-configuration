@@ -23,7 +23,7 @@ repositories {
 
 dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("io.qameta.allure:allure-okhttp3:2.20.1")
+    implementation("io.qameta.allure:allure-okhttp3:2.21.0")
     testImplementation("com.codeborne:selenide:6.11.2")
     testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
     testImplementation("io.qameta.allure:allure-selenide:2.21.0")
