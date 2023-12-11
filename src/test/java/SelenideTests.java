@@ -1,7 +1,7 @@
-import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.SelenideConfig;
 import com.codeborne.selenide.SelenideDriver;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Step;
 import io.qameta.allure.selenide.AllureSelenide;
 import io.undertow.Undertow;
 import io.undertow.server.RoutingHandler;
@@ -46,7 +46,7 @@ class SelenideTests {
 
     @BeforeAll
     void setUpSelenide() {
-        driver = new SelenideDriver(new SelenideConfig().headless(true));
+        driver = new SelenideDriver(new SelenideConfig().baseUrl("http://127.0.0.1:8081").headless(true));
         SelenideLogger.addListener("allure", new AllureSelenide().savePageSource(false));
     }
 
@@ -58,7 +58,12 @@ class SelenideTests {
     @Test
     @DisplayName("Able to open web application")
     void openTest() {
-        driver.open("http://127.0.0.1:8081/");
+        openMainPage();
         Assertions.assertEquals("example", driver.title());
+    }
+
+    @Step("Open main page")
+    void openMainPage() {
+        driver.open("/");
     }
 }

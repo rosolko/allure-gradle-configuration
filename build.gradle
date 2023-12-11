@@ -9,33 +9,52 @@ version "1.0.0"
 
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(8)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
 
 allure {
-    version = "2.14.0"
+    version = "2.25.0"
 }
 
 repositories {
     mavenCentral()
 }
 
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs.add('-parameters')
+}
+
+configurations {
+    agent {
+        canBeResolved = true
+        canBeConsumed = true
+    }
+}
+
 dependencies {
+    agent "org.aspectj:aspectjweaver:1.9.20.1"
+
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("io.qameta.allure:allure-okhttp3:2.25.0")
+
     testImplementation("com.codeborne:selenide:7.0.4")
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
     testImplementation("io.qameta.allure:allure-selenide:2.25.0")
     testImplementation("io.undertow:undertow-core:2.3.10.Final")
+
     testRuntimeOnly("io.qameta.allure:allure-junit5:2.25.0")
     testRuntimeOnly("org.slf4j:slf4j-simple:2.0.9")
 }
 
-tasks.withType(Test) {
+tasks.withType(Test).configureEach {
     useJUnitPlatform()
     testLogging.showStandardStreams = true
     maxParallelForks = (int) (Runtime.runtime.availableProcessors().intdiv(2) ?: 1)
+    jvmArgs = [ "-javaagent:${configurations.agent.singleFile}" ]
 }
 
-wrapper.gradleVersion = "6.7"
+wrapper {
+    gradleVersion = "8.5"
+}
