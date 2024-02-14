@@ -34,7 +34,7 @@ configurations {
 }
 
 dependencies {
-    agent "org.aspectj:aspectjweaver:1.9.21"
+    agent "org.aspectj:aspectjweaver:1.9.21.1"
 
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation("io.qameta.allure:allure-okhttp3:2.25.0")
