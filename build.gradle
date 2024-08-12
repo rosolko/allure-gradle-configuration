@@ -45,7 +45,7 @@ dependencies {
     testImplementation("io.undertow:undertow-core:2.3.15.Final")
 
     testRuntimeOnly("io.qameta.allure:allure-junit5:2.29.0")
-    testRuntimeOnly("org.slf4j:slf4j-simple:2.0.15")
+    testRuntimeOnly("org.slf4j:slf4j-simple:2.0.16")
 }
 
 tasks.withType(Test).configureEach {
