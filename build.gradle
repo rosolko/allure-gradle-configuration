@@ -39,7 +39,7 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
     implementation("io.qameta.allure:allure-okhttp3:2.29.1")
 
-    testImplementation("com.codeborne:selenide:7.7.3")
+    testImplementation("com.codeborne:selenide:7.8.0")
     testImplementation("org.junit.jupiter:junit-jupiter:5.12.1")
     testImplementation("io.qameta.allure:allure-selenide:2.29.1")
     testImplementation("io.undertow:undertow-core:2.3.18.Final")
