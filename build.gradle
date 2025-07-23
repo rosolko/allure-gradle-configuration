@@ -40,7 +40,7 @@ dependencies {
     implementation("io.qameta.allure:allure-okhttp3:2.29.1")
 
     testImplementation("com.codeborne:selenide:7.9.4")
-    testImplementation("org.junit.jupiter:junit-jupiter:5.13.3")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.13.4")
     testImplementation("io.qameta.allure:allure-selenide:2.29.1")
     testImplementation("io.undertow:undertow-core:2.3.18.Final")
 
