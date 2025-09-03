@@ -14,7 +14,7 @@ java {
 }
 
 allure {
-    version = "2.29.0"
+    version = "2.29.1"
 }
 
 repositories {
@@ -56,5 +56,5 @@ tasks.withType(Test).configureEach {
 }
 
 wrapper {
-    gradleVersion = "8.10.2"
+    gradleVersion = "9.0.0"
 }
