@@ -15,6 +15,7 @@ jobs:
       - name: Setup jdk
         uses: actions/setup-java@v5
         with:
+          distribution: 'temurin'
           java-version: 21
       - name: Setup cache
         uses: actions/cache@v4
