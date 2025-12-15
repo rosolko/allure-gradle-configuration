@@ -32,7 +32,7 @@ jobs:
       - name: Build and test
         run: ./gradlew clean build test
       - name: Upload artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: package
           path: build/libs
