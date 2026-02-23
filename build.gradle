@@ -38,14 +38,14 @@ dependencies {
     agent "org.aspectj:aspectjweaver:1.9.25.1"
 
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-    implementation("io.qameta.allure:allure-okhttp3:2.32.0")
+    implementation("io.qameta.allure:allure-okhttp3:2.33.0")
 
     testImplementation("com.codeborne:selenide:7.14.0")
     testImplementation("org.junit.jupiter:junit-jupiter:6.0.3")
-    testImplementation("io.qameta.allure:allure-selenide:2.32.0")
+    testImplementation("io.qameta.allure:allure-selenide:2.33.0")
     testImplementation("io.undertow:undertow-core:2.3.23.Final")
 
-    testRuntimeOnly("io.qameta.allure:allure-junit5:2.32.0")
+    testRuntimeOnly("io.qameta.allure:allure-junit5:2.33.0")
     testRuntimeOnly("org.slf4j:slf4j-simple:2.0.17")
 }
 
