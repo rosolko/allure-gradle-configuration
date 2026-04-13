@@ -1,6 +1,6 @@
 plugins {
     id "java-library"
-    id "io.qameta.allure" version "3.1.0"
+    id "io.qameta.allure" version "3.2.0"
     id "com.github.ben-manes.versions" version "0.53.0"
 }
 
