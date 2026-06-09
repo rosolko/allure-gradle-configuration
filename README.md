@@ -1,4 +1,4 @@
-# Simple [Allure 2](https://github.com/allure-framework/allure-java) configuration for Gradle
+# Simple [Allure 3](https://github.com/allure-framework/allure3) configuration for [Gradle](https://github.com/allure-framework/allure-gradle) with [Java](https://github.com/allure-framework/allure-java)
 
 Related to [medium post](https://medium.com/@rosolko/simple-allure-2-configuration-for-gradle-8cd3810658dd)
 
