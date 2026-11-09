@@ -38,7 +38,7 @@ dependencies {
     agent "org.aspectj:aspectjweaver:1.9.26"
 
     implementation("com.squareup.retrofit2:converter-gson:3.0.0")
-    implementation("io.qameta.allure:allure-okhttp3:3.0.1")
+    implementation("io.qameta.allure:allure-okhttp3:3.1.1")
 
     testImplementation("com.codeborne:selenide:7.19.1")
     testImplementation("org.junit.jupiter:junit-jupiter:6.1.3")
